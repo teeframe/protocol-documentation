@@ -1,7 +1,9 @@
+# Fundamentals
+
 ## Packet Types
 
 
-## Sequence Number
+## Sequence Numbers
 
 
 ## Security Token

@@ -37,8 +37,8 @@ export default defineConfig({
         text: 'Chunks',
         items: [
           { text: 'Chunk Structure', link: '/chunks/chunk-structure' },
-          { text: 'System Messages', link: '/encoding' },
-          { text: 'Game Messages', link: '/fundamentals' },
+          { text: 'System Messages', link: '/chunks/system-messages' },
+          { text: 'Game Messages', link: '/chunks/game-messages' },
         ]
       },
 
