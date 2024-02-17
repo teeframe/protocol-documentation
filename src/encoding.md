@@ -1,6 +1,6 @@
 # Encoding
 
-## Int Packing
+## Integer Packing
 
 ## String Packing
 

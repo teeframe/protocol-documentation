@@ -14,6 +14,18 @@ export default defineConfig({
       // { text: 'Examples', link: '/markdown-examples' }
     ],
 
+    search: {
+      provider: 'local',
+      options: {
+        miniSearch: {
+        }
+      },
+    },
+
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+    ],
+
     sidebar: [
       {
         text: 'Getting Started',
@@ -45,25 +57,21 @@ export default defineConfig({
       {
         text: 'Snapshots',
         items: [
-          { text: 'Snap Structure', link: '/fsdfsd' },
-          { text: 'Object Items', link: '/encoding' },
-          { text: 'Event Items', link: '/fundamentals' },
+          { text: 'Snapshot Structure', link: '/snapshots/snapshot-structure' },
+          { text: 'Object Items', link: '/snapshots/object-items' },
+          { text: 'Event Items', link: '/snapshots/event-items' },
         ]
       },
 
       {
         text: 'Implementation',
         items: [
-          { text: 'Initial Handshake', link: '/initial-handshake' },
-          { text: 'Map Download', link: '/map-download' },
-          { text: 'Sending Game Context', link: '/map-download' },
-          { text: 'Disconnecting', link: '/disconnecting' },
+          { text: 'Initial Handshake', link: '/implementation/initial-handshake' },
+          { text: 'Map Download', link: '/implementation/map-download' },
+          { text: 'Sending Game Context', link: '/implementation/sending-game-context' },
+          { text: 'Disconnecting', link: '/implementation/disconnecting' },
         ]
       },
     ],
-
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ]
   }
 })

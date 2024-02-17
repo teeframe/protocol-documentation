@@ -1,6 +1,5 @@
 # System Messages
 
-[[toc]]
 
 ## 0 - NETMSG_NULL
 
