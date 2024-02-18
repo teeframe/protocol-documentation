@@ -39,8 +39,8 @@ export default defineConfig({
       {
         text: 'Packets',
         items: [
-          { text: 'Control Messages', link: '/packets/control-messages' },
           { text: 'Connection-less Messages', link: '/packets/connection-less-messages' },
+          { text: 'Control Messages', link: '/packets/control-messages' },
           { text: 'Default Packets', link: '/packets/default-packets' },
         ]
       },

@@ -56,7 +56,7 @@ You can find a more technical explanation in the [ChillerDragon Teeworlds Protoc
 
 ## String Packing
 
-When strings are sent via the network, you don't need to worry about bits, only the bytes. They are sent as plain C strings. They do not contain a length and to identify their end, they must be null-terminated.
+When strings are sent via the network, you don't need to worry about bits like numbers, only the bytes. They are sent as plain C strings. They do not contain a length and to identify their end, they must be null-terminated.
 
 You can see an example of a encoded string "Hello" in hexadecimal:
 ```sh
@@ -76,7 +76,7 @@ Packets can be compressed using Huffman compression. The Teeworlds packet header
 
 Huffman compression is an algorithm that is not specific to Teeworlds. You can learn from any documentation, [like this Youtube video](https://www.youtube.com/watch?v=iiGZ947Tcck), to understand its fundamentals.
 
-Huffman compression depends on a weight tree. So, to re-implement the Huffman yourself, you will need to use the same weight tree as the official Teeworlds. The official Teeworlds frequency table can be [found here](https://github.com/teeworlds/teeworlds/blob/26d24ec061d44e6084b2d77a9b8a0a48e354eba6/src/engine/shared/huffman.cpp#L7-L20).
+Huffman compression depends on a weight tree. So, to re-implement the Huffman yourself, you will need to use the same weight tree as the official Teeworlds. The official frequency table can be [found here](https://github.com/teeworlds/teeworlds/blob/26d24ec061d44e6084b2d77a9b8a0a48e354eba6/src/engine/shared/huffman.cpp#L7-L20).
 
 :::info
 You can learn more packet header and it payload in the [Fundamentals](./fundamentals) page.
