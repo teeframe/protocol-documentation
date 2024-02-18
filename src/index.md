@@ -1,18 +1,18 @@
 # Introduction
 
-This documentation describes the Protocol used at TeeFrame. It's based on the Teeworlds Protocol 0.6 + DDNet Extensions. Here you will learn how all network-level communication are encoded and exchanged.
+This documentation describes the Protocol used at TeeFrame. It's based on the Teeworlds Protocol 0.6 + DDNet Extensions. Here, you will learn how all network-level communication is encoded and exchanged.
 
 ## The Protocol
 
-The Teeworlds 0.6 protocol is a set of rules for the Teeworlds game to exchange data between the client and server over UDP. DDNet is the maintained fork of Teeworlds 0.6 and extends this protocol for extra features, such as extended gui, extended server data and player listing, and others.
+The Teeworlds 0.6 protocol is a set of rules for the Teeworlds game to exchange data between the client and server over UDP. DDNet is the maintained fork of Teeworlds 0.6 and extends this protocol for extra features, such as extended GUI, extended server data and player listing, and others.
 
 ## What to Expect
 
-All content written here aims to describe and exemplify in a high-level and practical way how all the communication works. This documentation avoid technical terminology terms as much as possible.
+All content written here aims to describe and exemplify how all communication works in a simplified and practical way. This documentation avoids technical terminology terms as much as possible.
 
-The documentation skips deprecated features and notes about past changes to the protocol. This also means if DDNet implemented a enhanced way to send some data, the documentation will describe the enhanced one as the only way.
+It skips deprecated features and notes about past changes to the protocol. Also, if DDNet has implemented an enhanced way to send some data, the documentation will describe the enhanced one as the only way.
 
-Although this documentation is based on an existing protocol and maintains it compatibility, the logic and naming of values is based on the TeeFrame and may be different from the original Teeworlds 0.6 or DDNet.
+Although this documentation is based on an existing protocol and maintains its compatibility, the logic and naming of values are based on TeeFrame and may differ from the original Teeworlds 0.6 or DDNet.
 
 ## Credits
 
