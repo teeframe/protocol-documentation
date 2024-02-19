@@ -6,4 +6,4 @@
 
 ## Chunks Queueing
 
-## Understanding Snapshots
+## Understanding Snaps
