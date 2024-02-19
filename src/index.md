@@ -14,6 +14,17 @@ It skips deprecated features and notes about past changes to the protocol. Also,
 
 Although this documentation is based on an existing protocol and maintains its compatibility, the logic and naming of values are based on TeeFrame and may differ from the original Teeworlds 0.6 or DDNet.
 
+## Debugging
+
+If you are developing and testing an implementation with this documentation, it is recommended that you use a debugging tool to understand the flow and data of the packets more easily. Below are recommendations for tools that can help you:
+
+- [wireshark-dissector - Teeworlds plugin for wireshark](https://github.com/heinrich5991/libtw2/tree/master/wireshark-dissector)
+- [twnet_parser - Teeworlds network protocol library in Python](https://gitlab.com/teeworlds-network/twnet_parser)
+- [teeworlds-client - Teeworlds client/library, made in typescript](https://gitlab.com/swarfey/teeworlds-client/)
+- [huffman_tw - Teeworlds C++ huffman compression code wrapped as a ruby gem](https://github.com/ChillerDragon/huffman-tw)
+- [teeworlds_network - Teeworlds 0.7 Client and Server network library](https://github.com/ChillerDragon/teeworlds_network)
+
+
 ## Credits
 
 This documentation was created by [Miguilim](https://github.com/miguilimzero). The content is based on [ChillerDragon Teeworlds Protocol](https://chillerdragon.github.io/teeworlds-protocol/), [libtw2 docs](https://github.com/heinrich5991/libtw2/tree/master/doc), [Teeworlds 0.6 Source](https://github.com/teeworlds/teeworlds/tree/0.6), and [DDNet Source](https://github.com/ddnet/ddnet).
