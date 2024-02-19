@@ -1,6 +1,6 @@
 # Fundamentals
 
-By learning how the data is encoded and decoded, you can understand how the fundamentals of packets work. Here, you will understand the basic structure of the packets and the main points in sending and receiving them. **By understanding these two sections, things will get easier.**
+By learning how the data is encoded and decoded, you can understand how the fundamentals of packets work. Here, you will understand the basic structure of the packets and the main points in sending and receiving them. **By understanding these two pages, things will get easier.**
 
 ## Packet Flags
 
@@ -23,7 +23,7 @@ The protocol uses a sequence number on the packet header to ensure that packets 
 The ACK number defines how many [vital chunks](#default-packets) were successfully received. As a server, you will have an ACK number to track how many vital chunks you received from the client, and the client will have an ACK number to track how many vital chunks it received from you (the server).
 
 :::info
-Sequence Numbers does not apply for [Connection-less Packets](#connection-less-messages).
+Sequence Number does not apply for [Connection-less Packets](#connection-less-messages).
 :::
 :::warning
 ACK is reset to 0 every time it reaches the maximum value (1024).
