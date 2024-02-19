@@ -79,5 +79,5 @@ Huffman compression is an algorithm that is not specific to Teeworlds. You can l
 Huffman compression depends on a weight tree. So, to re-implement the Huffman yourself, you will need to use the same weight tree as the official Teeworlds. The official frequency table can be [found here](https://github.com/teeworlds/teeworlds/blob/26d24ec061d44e6084b2d77a9b8a0a48e354eba6/src/engine/shared/huffman.cpp#L7-L20).
 
 :::info
-You can learn more packet header and it payload in the [Fundamentals](./fundamentals) page.
+You can learn more packet header and it payload in the [Fundamentals](./fundamentals.md) page.
 :::
