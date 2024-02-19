@@ -10,9 +10,8 @@ Control messages have simple structure packet structure. They have a header and 
 byte[0]     // 6bit flags, 2bit ack
 byte[1]     // 8bit ack
 byte[2]     // unused - 00
-byte[3-6]   // security token
-byte[7]     // message id
-byte[8-...] // extra data
+byte[3]     // message id
+byte[4-...] // extra data
 ```
 Extra data is a optional string that may be present in some control messages, like reason for disconnection (ex. player banned).
 

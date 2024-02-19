@@ -55,11 +55,11 @@ export default defineConfig({
       },
 
       {
-        text: 'Snapshots',
+        text: 'Snaps',
         items: [
-          { text: 'Snapshot Structure', link: '/snapshots/snapshot-structure' },
-          { text: 'Object Items', link: '/snapshots/object-items' },
-          { text: 'Event Items', link: '/snapshots/event-items' },
+          { text: 'Snap Structure', link: '/snap/snap-structure' },
+          { text: 'Object Items', link: '/snap/object-items' },
+          { text: 'Event Items', link: '/snap/event-items' },
         ]
       },
 

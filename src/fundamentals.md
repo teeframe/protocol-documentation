@@ -14,7 +14,7 @@ The available flags are:
 | 2        | FLAG_TYPE_CONNECTION_LESS |
 | 4        | FLAG_RESEND               |
 | 8        | FLAG_COMPRESSION          |
-| 16       | FLAG_SECURITY_TOKEN       |
+<!-- | 16       | FLAG_SECURITY_TOKEN       | -->
 
 ## Sequence Number
 
@@ -29,7 +29,7 @@ Sequence Number does not apply for [Connection-less Packets](#connection-less-me
 ACK is reset to 0 every time it reaches the maximum value (1024).
 :::
 
-## Security Token
+<!-- ## Security Token
 
 Every game related packet has a packet header with a security token field. When the client sends the first packet to connect to the server, the serve will send a response with a new generated security token. From now on, **the client and the server** will use this security token to send and receive packets. This token is used to prevent spoofing attacks.
 
@@ -37,7 +37,7 @@ The security token is a 4-byte value randomly generated. You can just generate 4
 
 :::info
 Security token does not apply for [Connection-less Packets](#connection-less-messages).
-:::
+::: -->
 
 
 ## Packet Types
