@@ -12,7 +12,7 @@ All content written here aims to describe and exemplify how all communication wo
 
 It skips deprecated features and notes about past changes to the protocol. Also, if DDNet has implemented an enhanced way to send some data, the documentation will describe the enhanced one as the only way.
 
-Although this documentation is based on an existing protocol and maintains its compatibility, *the logic and naming of values are based on TeeFrame and may differ from the original Teeworlds 0.6 or DDNet.*
+Although this documentation is based on an existing protocol and maintains its compatibility, **the logic and naming of values are based on TeeFrame and may differ from the original Teeworlds 0.6 or DDNet.**
 
 ## Debugging
 
