@@ -14,23 +14,34 @@ byte[3-6]   // security token
 byte[7]     // message id
 byte[8-...] // extra data
 ```
+Extra data is a optional string that may be present in some control messages, like reason for disconnection (ex. player banned).
 
-### Extracting Flags and ACK
+:::info
+To extract Flags and ACK, you can follow the guide in the [Extracting Flags and ACK](../fundamentals.md#extracting-flags-and-ack) section.
+:::
 
 ## Messages
 
 | Message ID    | Name                            |
 | ------------- | :-----------------------------: |
-| 0             | [KEEP_ALIVE](#keep-alive)         | 
-| 1             | [CONNECT](#connect)             |
-| 2             | [CONNECT_ACCEPT](#connect-accept) |
+| 0             | [KEEP_ALIVE](#0-keep-alive)         | 
+| 1             | [CONNECT](#1-connect)             |
+| 2             | [CONNECT_ACCEPT](#2-connect-accept) |
 | 3             | *Unused*                        |
-| 4             | [CLOSE](#close)                 |
+| 4             | [CLOSE](#4-close)                 |
 
-### KEEP_ALIVE
+### 0 - KEEP_ALIVE
 
-### CONNECT
+This message is used to keep the connection alive. The client sends it to the server to avoid the connection being dropped. It contains no extra data. It is usually sent every 250ms by the client **if no other packet is sent.**
 
-### CONNECT_ACCEPT
+### 1 - CONNECT
 
-### CLOSE
+This message is the very first packet the is sent by the client to initiate a new connection with the server. It contains no relevant information and no extra data, is just the first step to establish the connection.
+
+### 2 - CONNECT_ACCEPT
+
+This message is the response to the "CONNECT" message. It contains the security token that will be used to send and receive packets from now on. There is also no extra data in this message.
+
+### 4 - CLOSE
+
+This message is used to cleanly terminate connections. This can be sent by the client on disconnect or by server the on shutdown (or ban). The extra field can be used to send a reason for disconnection, like "Banned" or "Server shutting down".
