@@ -74,11 +74,11 @@ To calculate the snap chunk CRC you can use the following pseudo-code:
 ```c
 crc = 0;
 
-foreach (snaps as snap) {
-    payload = snap->getPayload()
+foreach (snapItems as snapItem) {
+    itemPayload = snapItem->getPayload()
 
-    for (i=0; i < countBytes(payload); i++) { 
-        crc += payload[i];
+    for (i=0; i < countBytes(itemPayload); i++) { 
+        crc += itemPayload[i];
     }
 }
 ```
