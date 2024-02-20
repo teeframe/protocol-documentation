@@ -1,6 +1,6 @@
 # Encoding
 
-Before deep diving in the fundamentals and protocol logic, it's important to understand how the data is encoded and decoded. This section explains how that works for integer, strings and explain the compression method used.
+Before deep diving in the fundamentals and protocol logic, it's important to understand how the data is encoded and decoded. This page explains how that works for integer, strings and explain the compression method used.
 
 ## Integer Packing
 

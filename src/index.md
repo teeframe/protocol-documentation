@@ -21,6 +21,7 @@ If you are developing and testing an implementation with this documentation, it 
 - [wireshark-dissector - Teeworlds plugin for wireshark](https://github.com/heinrich5991/libtw2/tree/master/wireshark-dissector)
 - [twnet_parser - Teeworlds network protocol library in Python](https://gitlab.com/teeworlds-network/twnet_parser)
 - [teeworlds-client - Teeworlds client/library, made in typescript](https://gitlab.com/swarfey/teeworlds-client/)
+- [teeworlds-traffic-decoder - Teeworlds web interface traffic decoder](https://twnet.zillyhuhn.com/?d=04+0a+00+cf+2e+de+1d+04&v=6)
 - [huffman_tw - Teeworlds C++ huffman compression code wrapped as a ruby gem](https://github.com/ChillerDragon/huffman-tw)
 - [teeworlds_network - Teeworlds 0.7 Client and Server network library](https://github.com/ChillerDragon/teeworlds_network)
 

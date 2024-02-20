@@ -1,6 +1,6 @@
 # Control Messages
 
-This section describes the control messages structure, all kind of control messages available and its purpose.
+This page describes the control messages structure, all kind of control messages available and its purpose.
 
 ## Structure
 
