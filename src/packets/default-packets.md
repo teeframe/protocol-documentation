@@ -72,13 +72,13 @@ Snap Slice will be sent with the same current tick, delta tick, and CRC. Multipl
 To calculate the snap chunk CRC you can use the following pseudo-code:
 
 ```c
-crc = 0;
+crc = 0
 
 foreach (snapItems as snapItem) {
     itemPayload = snapItem->getPayload()
 
     for (i=0; i < countBytes(itemPayload); i++) { 
-        crc += itemPayload[i];
+        crc += itemPayload[i]
     }
 }
 ```
