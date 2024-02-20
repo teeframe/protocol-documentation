@@ -62,6 +62,8 @@ These data are CRC, a removed items count, a delta items count, and one or multi
 - **Removed Items Count** : amount of items that were removed compared to the last snap. 
 - **Delta Items Count** : amount of items present in the current snap. 
 
+### Snap Slice
+
 Sometimes you cannot fit all the items in a single snap chunk due to the [Size Limits](./../fundamentals.md#size-limits), so you need to split them into multiple snap chunks (and multiple packets). **This is when the Snap Slice comes in.**
 
 Snap Slice will be sent with the same current tick, delta tick, and CRC. Multiple packets with a snap slice will be sent until all items are sent. The Snap Slice has two extra fields: **Total Number** and **Current Number**.
