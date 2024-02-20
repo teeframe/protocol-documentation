@@ -60,6 +60,10 @@ These packets are used to send game-related information. They are utilized to se
 Each chunk have it chunk flags, message id, sequence number, and payload. "VITAL" is one of the chunk flags. You can read more about in the [Chunk Structure](./chunks/chunk-structure.md) page.
 :::
 
+## Size Limits
+
+The protocol has some size limits. The maximum size of any kind of packet is 1400 bytes. **This size includes the packet header and the packet payload.**
+
 ## Extracting Flags and ACK
 
 Control Messages and Default Packets have in common the presence of Flags and ACK. However, this information is "mixed" into two bytes of the packet header, as follows:

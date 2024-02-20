@@ -58,9 +58,7 @@ export default defineConfig({
         text: 'Snaps',
         items: [
           { text: 'Snap Structure', link: '/snap/snap-structure' },
-          { text: 'Object Items', link: '/snap/object-items' },
-          { text: 'Event Items', link: '/snap/event-items' },
-        ]
+          { text: 'Snap Items', link: '/snap/snap-items' },        ]
       },
 
       {

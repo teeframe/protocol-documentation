@@ -41,10 +41,48 @@ Every default packet has a maximum of 65 chunks regardless of the sum of chunk s
 
 ## Understanding Snaps
 
-Some of the system message chunks are called Snaps. **They are used by the server to send the Snap Items to the client.** One snap chunk can contain multiple snap items. Snap items represent the state of something in the game world, such as tees and projectiles.
+Some of the system message chunks are called Snaps. **They are used by the server to send the Snap Items to the client.** One snap chunk can contain multiple snap items (or no items at all). Snap items represent the state of something in the game world, such as tees and projectiles.
 
-Every snap chunk contains CRC, removed items count, and an items count. Every snap item has an item ID, ID, and a custom payload structure to follow.
+Every snap chunk contains at least a current tick and delta tick value:
+
+- **Current Tick** : the current tick of the server.
+- **Delta Tick** : the difference between the current tick and the last received snap tick.
 
 :::info
-CRC is a integer value that is used to check the integrity of the snap chunk.
+Delta tick will be currentTick + 1 if the client has not received any previous snap.
+:::
+
+## Snap Types
+
+There are three types of snap chunks: **Snap Empty, Snap Single, and Snap Slice**. Snap Empty contains only the current and delta tick and is used when there are no items to send. While the other snaps contains extra data. The default snap is the Snap Single.
+
+These data are CRC, a removed items count, a delta items count, and one or multiple snap items. Every snap item has an item ID, ID, and a custom payload structure to follow.
+
+- **CRC** : integer value that is used to check the integrity of the snap chunk. 
+- **Removed Items Count** : amount of items that were removed compared to the last snap. 
+- **Delta Items Count** : amount of items present in the current snap. 
+
+Sometimes you cannot fit all the items in a single snap chunk due to the [Size Limits](./../fundamentals.md#size-limits), so you need to split them into multiple snap chunks (and multiple packets). **This is when the Snap Slice comes in.**
+
+Snap Slice will be sent with the same current tick, delta tick, and CRC. Multiple packets with a snap slice will be sent until all items are sent. The Snap Slice has two extra fields: **Total Number** and **Current Number**.
+
+
+### Calculating CRC
+
+To calculate the snap chunk CRC you can use the following pseudo-code:
+
+```c
+crc = 0;
+
+foreach (snaps as snap) {
+    payload = snap->getPayload()
+
+    for (i=0; i < countBytes(payload); i++) { 
+        crc += payload[i];
+    }
+}
+```
+
+:::danger
+All snaps information listed here may be incorrect. They have not yet been checked and validated.
 :::
