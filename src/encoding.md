@@ -8,7 +8,7 @@ All numbers (integers) sent via the network are packed using a custom Teeworlds-
 
 The encoding uses the second bit of the **first byte** to say if it is a positive or negative number. `1` indicates a negative number, while a `0` signifies a positive one. Furthermore, the first bit in **each byte** works as an extension indicator. A `1` in this position signals the presence of a subsequent byte, whereas a `0` marks the concluding byte of the sequence. 
 
-Additionally, it's essential to recognize that the protocol employs a little-endian byte order, meaning the least significant bytes (LSB) are stored transmitted **you should read the bytes from right to left.** For instance, the number 64, the minimal positive integer necessitating two bytes, is encoded as `10000000 00000001`, which can be analyzed as:
+Additionally, it's essential to recognize that the protocol employs a little-endian byte order, meaning the least significant bytes (LSB) are transmitted first and **you should read the bytes from right to left.** For instance, the number 64, the minimal positive integer necessitating two bytes, is encoded as `10000000 00000001`, which can be analyzed as:
 
 
 ```
