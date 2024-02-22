@@ -1,6 +1,6 @@
 # Game Messages
 
-This page describes the game messages structure, all kind of game messages available and its purpose.
+This page describes the game messages structure, all kinds of game messages available, and their purpose.
 
 | Message ID    | Name                                |
 | ------------- | :---------------------------------: |
