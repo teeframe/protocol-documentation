@@ -14,6 +14,10 @@ It skips deprecated features and notes about past changes to the protocol. Also,
 
 Although this documentation is based on an existing protocol and maintains its compatibility, **the logic and naming of values are based on TeeFrame and may differ from the original Teeworlds 0.6 or DDNet.**
 
+:::info
+You can track the naming differences on [Naming Changes](./others/naming-changes.md) page.
+:::
+
 ## Debugging
 
 If you are developing and testing an implementation with this documentation, it is recommended that you use a debugging tool to understand the flow and data of the packets more easily. Below are recommendations for tools that can help you:

@@ -70,6 +70,8 @@ export default defineConfig({
           { text: 'Disconnecting', link: '/implementation/disconnecting' },
         ]
       },
+
+      { text: 'Naming Changes', link: '/others/naming-changes' },
     ],
   }
 })
