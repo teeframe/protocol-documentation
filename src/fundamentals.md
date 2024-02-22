@@ -60,6 +60,12 @@ These packets are used to send game-related information. They are utilized to se
 Each chunk have it chunk flags, message id, sequence number, and payload. "VITAL" is one of the chunk flags. You can read more about in the [Chunk Structure](./chunks/chunk-structure.md) page.
 :::
 
+## Tick System
+
+Like any type of game, your implementation must have a tick system. **The only supported tick rate is 50 ticks per second.** 
+
+The minimum and maximum tick number supported is 0 and 0x6FFFFFFF (1879048191). After that, you will need to restart your implementation entirely.
+
 ## Size Limits
 
 The protocol has some size limits. The maximum size of any kind of packet is 1400 bytes. **This size includes the packet header and the packet payload.**
