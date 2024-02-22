@@ -6,10 +6,10 @@ This page describes the chunk structure (vital and non-vital), its header, and p
 
 The available chunk flags are:
 
-| Value    | Name                      |
-| -------- | :-----------------------: |
-| 1        | FLAG_VITAL                |
-| 2        | FLAG_RESEND               |
+| Value    | Final Value | Name                      |
+| -------- | ----------- | :-----------------------: |
+| 1 << 0   | 1           | FLAG_VITAL                |
+| 1 << 1   | 2           | FLAG_RESEND               |
 
 ## Vital Chunk Structure
 

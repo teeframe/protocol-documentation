@@ -8,12 +8,12 @@ Flags are used to define the type of packet and extra information. The flag valu
 
 The available flags are:
 
-| Value    | Name                      |
-| -------- | :-----------------------: |
-| 1        | FLAG_TYPE_CONTROL         | 
-| 2        | FLAG_TYPE_CONNECTION_LESS |
-| 4        | FLAG_RESEND               |
-| 8        | FLAG_COMPRESSION          |
+| Value    | Final Value | Name                      |
+| -------- | ----------- | :-----------------------: |
+| 1 << 0   | 1           | FLAG_TYPE_CONTROL         | 
+| 1 << 1   | 2           | FLAG_TYPE_CONNECTION_LESS |
+| 1 << 2   | 4           | FLAG_RESEND               |
+| 1 << 3   | 8           | FLAG_COMPRESSION          |
 <!-- | 16       | FLAG_SECURITY_TOKEN       | -->
 
 ## Sequence Number
