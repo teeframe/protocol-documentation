@@ -36,7 +36,7 @@ Since multiple chunks can be added in a single packet, the server and the client
 You can find the chunks listing that must be sent instantly in the [System Messages](./../chunks/system-messages.md) and [Game Messages](./../chunks/game-messages.md) pages.
 
 :::warning
-Every default packet has a maximum of 256 chunks regardless of the sum of chunk sizes.
+Every default packet has a maximum of 255 chunks regardless of the sum of chunk sizes.
 :::
 
 ## Understanding Snaps
