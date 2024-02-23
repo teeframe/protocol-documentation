@@ -8,8 +8,8 @@ Snap Empty chunk have the following bytes structure:
 
 ```sh
 // chunk header..
-chunkByte[3-*] // Current Tick
-chunkByte[*]   // Delta Tick
+chunkByte[3-*] // current tick - integer
+chunkByte[*]   // delta tick   - integer
 ```
 
 ## Snap Single Structure
@@ -18,14 +18,14 @@ Snap Single chunk have the following bytes structure:
 
 ```sh
 // chunk header..
-chunkByte[3-*]   // Current Tick        - integer
-chunkByte[*]     // Delta Tick          - integer
-chunkByte[*]     // CRC                 - integer
-chunkByte[*]     // Size                - integer
-chunkByte[*]     // Removed Items Count - integer
-chunkByte[*]     // Delta Items Count   - integer
-chunkByte[*]     // Unused              - 00 
-chunkByte[*-...] // Snap Items
+chunkByte[3-*]   // current tick        - integer
+chunkByte[*]     // delta tick          - integer
+chunkByte[*]     // crc                 - integer
+chunkByte[*]     // size                - integer
+chunkByte[*]     // removed items count - integer
+chunkByte[*]     // delta items count   - integer
+chunkByte[*]     // unused              - 00 
+chunkByte[*-...] // snap items
 ```
 
 :::info
@@ -38,16 +38,16 @@ Snap Slice chunk have the following bytes structure:
 
 ```sh
 // chunk header..
-chunkByte[3-*]   // Current Tick        - integer
-chunkByte[*]     // Delta Tick          - integer
-chunkByte[*]     // CRC                 - integer
-chunkByte[*]     // Total Number        - integer
-chunkByte[*]     // Current Number      - integer
-chunkByte[*]     // Size                - integer
-chunkByte[*]     // Removed Items Count - integer
-chunkByte[*]     // Delta Items Count   - integer
-chunkByte[*]     // Unused              - 00 
-chunkByte[*-...] // Snap Items
+chunkByte[3-*]   // current tick        - integer
+chunkByte[*]     // delta tick          - integer
+chunkByte[*]     // crc                 - integer
+chunkByte[*]     // total number        - integer
+chunkByte[*]     // current number      - integer
+chunkByte[*]     // size                - integer
+chunkByte[*]     // remover items count - integer
+chunkByte[*]     // delta items count   - integer
+chunkByte[*]     // unused              - 00 
+chunkByte[*-...] // snap items
 ```
 
 :::info
