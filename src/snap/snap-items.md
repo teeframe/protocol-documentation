@@ -2,7 +2,7 @@
 
 This page describes the snap items structure, all kinds of snap items, and their purpose.
 
-| Snap ID       | Name                                |
+| Item ID       | Name                                |
 | ------------- | :---------------------------------: |
 | 0             | *Unused* |
 | 1             | *Unused* |

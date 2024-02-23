@@ -46,7 +46,7 @@ Some of the system message chunks are called Snaps. **They are used by the serve
 Every snap chunk contains at least a current tick and delta tick value:
 
 - **Current Tick** : the current tick of the server.
-- **Delta Tick** : the current tick - the Ack Game Tick value from the last received "INPUT" chunk.
+- **Delta Tick** : the current tick - (the Ack Game Tick value from the last received "INPUT" chunk).
 
 :::info
 Delta tick will be current tick - (-1) if the server has not received any previous "INPUT" chunk from the client.
@@ -59,12 +59,13 @@ There are three types of snap chunks: **Snap Empty, Snap Single, and Snap Slice*
 These data are CRC, a removed items count, a delta items count, and one or multiple snap items. Every snap item has an item ID, ID, and a custom payload structure to follow.
 
 - **CRC** : integer value that is used to check the integrity of the snap chunk. 
+- **Size** : the size of the snap chunk. Size must include removed items count, delta items count, and snap items.
 - **Removed Items Count** : amount of items that were removed compared to the last snap. 
 - **Delta Items Count** : amount of items present in the current snap. 
 
 ### Snap Slice
 
-Sometimes you cannot fit all the items in a single snap chunk due to the [Size Limits](./../fundamentals.md#size-limits), so you need to split them into multiple snap chunks (and multiple packets). **This is when the Snap Slice comes in.**
+Sometimes you cannot fit all the items in a single snap chunk due to the [Size Limits](./../fundamentals.md#size-limits), so you need to split them into multiple snap slices (and multiple packets). **This is when the Snap Slice comes in.**
 
 Snap Slice will be sent with the same current tick, delta tick, and CRC. Multiple packets with a snap slice will be sent until all items are sent. The Snap Slice has two extra fields: **Total Number** and **Current Number**.
 
@@ -74,7 +75,7 @@ Snap Slice will be sent with the same current tick, delta tick, and CRC. Multipl
 
 ### When to send Snap Items
 
-
+TODO
 
 ### Calculating CRC
 
