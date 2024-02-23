@@ -37,6 +37,7 @@ This page describes the system messages structure, all kind of system messages a
 This message 
 
 - **Vital** : ✅
+- **Instant Sending** : ✅
 - **Sending Path** : Client -> Server
 
 Structure:
@@ -51,6 +52,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ✅
 - **Sending Path** : Server -> Client
 
 Structure:
@@ -66,6 +68,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ✅
 - **Sending Path** : Server -> Client
 
 Structure:
@@ -83,6 +86,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ✅
 - **Sending Path** : Server -> Client
 
 Structure: 
@@ -94,6 +98,7 @@ Structure:
 This message sends a slice of a snap with part of the items.
 
 - **Vital** : ❌
+- **Instant Sending** : ✅
 - **Sending Path** : Server -> Client
 
 :::info
@@ -105,6 +110,7 @@ Snap is a complex type of chunk. You can find more information about it on [Snap
 This message sends an empty snap with no items.
 
 - **Vital** : ❌
+- **Instant Sending** : ✅
 - **Sending Path** : Server -> Client
 
 :::info
@@ -116,6 +122,7 @@ Snap is a complex type of chunk. You can find more information about it on [Snap
 This message sends a full snap with all items.
 
 - **Vital** : ❌
+- **Instant Sending** : ✅
 - **Sending Path** : Server -> Client
 
 :::info
@@ -127,6 +134,7 @@ Snap is a complex type of chunk. You can find more information about it on [Snap
 This message
 
 - **Vital** : ❌
+- **Instant Sending** : ❌
 - **Sending Path** : Server -> Client
 
 Structure:
@@ -141,6 +149,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ❌
 - **Sending Path** : Server -> Client
 
 Structure:
@@ -155,6 +164,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ❌
 - **Sending Path** : Server -> Client
 
 Structure:
@@ -168,6 +178,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ✅
 - **Sending Path** : Client -> Server
 
 Structure:
@@ -179,6 +190,7 @@ Structure:
 This message
 
 - **Vital** : ❌
+- **Instant Sending** : ✅
 - **Sending Path** : Client -> Server
 
 Structure:
@@ -190,6 +202,7 @@ Structure:
 This message
 
 - **Vital** : ❌
+- **Instant Sending** : ✅
 - **Sending Path** : Client -> Server
 
 Structure:
@@ -214,6 +227,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ❌
 - **Sending Path** : Client -> Server
 
 Structure:
@@ -227,6 +241,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ❌
 - **Sending Path** : Client -> Server
 
 Structure:
@@ -240,6 +255,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ✅
 - **Sending Path** : Client -> Server
 
 Structure:
@@ -253,6 +269,7 @@ Structure:
 This message
 
 - **Vital** : ❌
+- **Instant Sending** : ❌
 - **Sending Path** : Both ways
 
 Structure:
@@ -264,6 +281,7 @@ Structure:
 This message
 
 - **Vital** : ❌
+- **Instant Sending** : ❌
 - **Sending Path** : Both ways
 
 Structure:
@@ -275,6 +293,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ❌
 - **Sending Path** : Server -> Client
 
 Structure:
@@ -290,6 +309,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ❌
 - **Sending Path** : Server -> Client
 
 Structure:

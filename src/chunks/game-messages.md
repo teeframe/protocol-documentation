@@ -41,6 +41,7 @@ This page describes the game messages structure, all kinds of game messages avai
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ❌
 
 Structure:
 
@@ -53,6 +54,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ❌
 
 Structure:
 
@@ -65,6 +67,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ❌
 
 Structure:
 
@@ -79,6 +82,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ❌
 
 Structure:
 
@@ -94,6 +98,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ❌
 
 Structure:
 
@@ -106,6 +111,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ❌
 
 Structure:
 
@@ -152,6 +158,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ✅
 
 Structure:
 
@@ -162,6 +169,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ❌
 
 Structure:
 
@@ -174,6 +182,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ❌
 
 Structure:
 
@@ -187,6 +196,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ❌
 
 Structure:
 
@@ -197,6 +207,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ❌
 
 Structure:
 
@@ -214,6 +225,7 @@ This message
 **NOTE:** Not used by DDNet servers.
 
 - **Vital** : ?
+- **Instant Sending** : ?
 
 Structure:
 
@@ -228,6 +240,7 @@ This message
 **NOTE:** Not used by DDNet servers.
 
 - **Vital** : ?
+- **Instant Sending** :  ?
 
 Structure:
 
@@ -240,6 +253,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ❌
 
 Structure:
 
@@ -254,6 +268,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ❌
 
 Structure:
 
@@ -269,6 +284,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ❌
 
 Structure:
 
@@ -282,6 +298,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ❌
 
 Structure:
 
@@ -294,6 +311,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ❌
 
 Structure:
 
@@ -306,6 +324,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ❌
 
 Structure:
 
@@ -324,6 +343,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ❌
 
 Structure:
 
@@ -342,6 +362,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ❌
 
 Structure:
 
@@ -352,6 +373,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ❌
 
 Structure:
 
@@ -364,6 +386,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ❌
 
 Structure:
 
@@ -376,6 +399,7 @@ Structure:
 This message
 
 - **Vital** : ✅
+- **Instant Sending** : ❌
 
 Structure:
 
