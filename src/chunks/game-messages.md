@@ -109,9 +109,43 @@ This message
 
 Structure:
 
+:::details Show Large Structure
 | Field         | Type   | Description |
 | ------------- | ------ | ----------- |
-| TODO          | **TODO** | TODO |
+| Ground Control Speed | **Integer** | TODO |
+| Ground Control Acceleration | **Integer** | TODO |
+| Ground Friction | **Integer** | TODO |
+| Ground Jump Impulse | **Integer** | TODO |
+| Air Jump Impulse | **Integer** | TODO |
+| Air Control Speed | **Integer** | TODO |
+| Air Control Acceleration | **Integer** | TODO |
+| Air Friction | **Integer** | TODO |
+| Hook Length | **Integer** | TODO |
+| Hook Fire Speed | **Integer** | TODO |
+| Hook Drag Acceleration | **Integer** | TODO |
+| Hook Drag Speed | **Integer** | TODO |
+| Gravity | **Integer** | TODO |
+| Velramp Start | **Integer** | TODO |
+| Velramp Range | **Integer** | TODO |
+| Velramp Curvature | **Integer** | TODO |
+| Gun Curvature | **Integer** | TODO |
+| Gun Speed | **Integer** | TODO |
+| Gun Lifetime | **Integer** | TODO |
+| Shotgun Curvature | **Integer** | TODO |
+| Shotgun Speed | **Integer** | TODO |
+| Shotgun Speeddiff | **Integer** | TODO |
+| Shotgun Lifetime | **Integer** | TODO |
+| Grenade Curvature | **Integer** | TODO |
+| Grenade Speed | **Integer** | TODO |
+| Grenade Lifetime | **Integer** | TODO |
+| Laser Reach | **Integer** | TODO |
+| Laser Bounce Delay | **Integer** | TODO |
+| Laser Bounce Num | **Integer** | TODO |
+| Laser Bounce Cost | **Integer** | TODO |
+| Laser Damage | **Integer** | *Unused* |
+| Player Collision | **Integer** | TODO |
+| Player Hooking | **Integer** | TODO |
+:::
 
 ## 8 - NETMSGTYPE_SV_READYTOENTER
 
