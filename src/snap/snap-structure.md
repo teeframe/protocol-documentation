@@ -24,7 +24,7 @@ chunkByte[*]     // crc                 - integer
 chunkByte[*]     // size                - integer
 chunkByte[*]     // removed items count - integer
 chunkByte[*]     // delta items count   - integer
-chunkByte[*]     // unused              - 00 
+chunkByte[*]     // unused              - integer (0)  
 chunkByte[*-...] // snap items
 ```
 
@@ -46,7 +46,7 @@ chunkByte[*]     // current number      - integer
 chunkByte[*]     // size                - integer
 chunkByte[*]     // remover items count - integer
 chunkByte[*]     // delta items count   - integer
-chunkByte[*]     // unused              - 00 
+chunkByte[*]     // unused              - integer (0) 
 chunkByte[*-...] // snap items
 ```
 
