@@ -7,7 +7,7 @@ This page describes the snap structure, all kinds of snap structures, and their 
 Snap Empty chunk have the following bytes structure:
 
 ```sh
-// chunk header..
+// chunk header...
 chunkByte[3-*] // current tick - integer
 chunkByte[*]   // delta tick   - integer
 ```
@@ -17,7 +17,7 @@ chunkByte[*]   // delta tick   - integer
 Snap Single chunk have the following bytes structure:
 
 ```sh
-// chunk header..
+// chunk header...
 chunkByte[3-*]   // current tick        - integer
 chunkByte[*]     // delta tick          - integer
 chunkByte[*]     // crc                 - integer
@@ -29,7 +29,7 @@ chunkByte[*-...] // snap items
 ```
 
 :::info
-Its recommended to check the [Snap Types](./../packets/default-packets.md#snap-types) section for more information about how these values.
+It is recommended to check the [Snap Types](./../packets/default-packets.md#snap-types) section for more information about these values.
 :::
 
 ## Snap Slice Structure
@@ -37,14 +37,14 @@ Its recommended to check the [Snap Types](./../packets/default-packets.md#snap-t
 Snap Slice chunk have the following bytes structure:
 
 ```sh
-// chunk header..
+// chunk header...
 chunkByte[3-*]   // current tick        - integer
 chunkByte[*]     // delta tick          - integer
 chunkByte[*]     // crc                 - integer
 chunkByte[*]     // total number        - integer
 chunkByte[*]     // current number      - integer
 chunkByte[*]     // size                - integer
-chunkByte[*]     // remover items count - integer
+chunkByte[*]     // removed items count - integer
 chunkByte[*]     // delta items count   - integer
 chunkByte[*]     // unused              - integer (0) 
 chunkByte[*-...] // snap items
@@ -64,8 +64,8 @@ itemByte[1]     // ID
 itemByte[2-...] // Payload
 ```
 
-## Encoding Strings To Snap Items
+## String Packing To Snap Items
 
-There is only one snap item that contains a string, the "**CLIENT INFO**". The way you encode strings to this snap is different from the default way to encode strings. You must first convert the string with a fixed size into multiple numbers.
+There is only one snap item that contains a string, the "**CLIENT INFO**". The way you pack strings to this snap is different from the default way. You will need to convert the string with a fixed size into multiple integers.
 
-You can find the implementation of the encoding and decoding of [the method here](https://github.com/teeworlds/teeworlds/blob/0.6/src/game/gamecore.h#L72-L104).
+You can find the implementation of the pack and unpack of [the method here](https://github.com/teeworlds/teeworlds/blob/0.6/src/game/gamecore.h#L72-L104).

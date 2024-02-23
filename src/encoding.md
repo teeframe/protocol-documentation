@@ -69,6 +69,12 @@ l // 6c
 o // 6f
 ```
 
+## Boolean Packing
+
+You may find values being considered as boolean throughout this documentation. About that, you don't need to worry, booleans are packed as integers:
+
+- `0` <-> `false`
+- `1` <-> `true`
 
 ## Huffman Compression
 

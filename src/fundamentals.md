@@ -64,7 +64,7 @@ Each chunk have it chunk flags, message id, sequence number, and payload. "VITAL
 
 Like any type of game, your implementation must have a tick system. **The only supported tick rate is 50 ticks per second.** 
 
-The minimum and maximum tick number supported is 0 and 0x6FFFFFFF (1879048191). After that, you will need to restart your implementation entirely.
+The minimum and maximum tick number supported is 0 and 0x6FFFFFFF (1879048191). After reaching the maximum, you will need to restart your implementation entirely.
 
 ## Size Limits
 

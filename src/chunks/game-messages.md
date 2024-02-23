@@ -40,7 +40,7 @@ This page describes the game messages structure, all kinds of game messages avai
 
 This message
 
-- **Is Vital** : ✅
+- **Vital** : ✅
 
 Structure:
 
@@ -52,7 +52,7 @@ Structure:
 
 This message
 
-- **Is Vital** : ✅
+- **Vital** : ✅
 
 Structure:
 
@@ -64,7 +64,7 @@ Structure:
 
 This message
 
-- **Is Vital** : ✅
+- **Vital** : ✅
 
 Structure:
 
@@ -78,7 +78,7 @@ Structure:
 
 This message
 
-- **Is Vital** : ✅
+- **Vital** : ✅
 
 Structure:
 
@@ -93,7 +93,7 @@ Structure:
 
 This message
 
-- **Is Vital** : ✅
+- **Vital** : ✅
 
 Structure:
 
@@ -105,7 +105,7 @@ Structure:
 
 This message
 
-- **Is Vital** : ✅
+- **Vital** : ✅
 
 Structure:
 
@@ -117,7 +117,7 @@ Structure:
 
 This message
 
-- **Is Vital** : ✅
+- **Vital** : ✅
 
 Structure:
 
@@ -127,7 +127,7 @@ Structure:
 
 This message
 
-- **Is Vital** : ✅
+- **Vital** : ✅
 
 Structure:
 
@@ -139,7 +139,7 @@ Structure:
 
 This message
 
-- **Is Vital** : ✅
+- **Vital** : ✅
 
 Structure:
 
@@ -152,7 +152,7 @@ Structure:
 
 This message
 
-- **Is Vital** : ✅
+- **Vital** : ✅
 
 Structure:
 
@@ -162,7 +162,7 @@ Structure:
 
 This message
 
-- **Is Vital** : ✅
+- **Vital** : ✅
 
 Structure:
 
@@ -179,7 +179,7 @@ This message
 
 **NOTE:** Not used by DDNet servers.
 
-- **Is Vital** : ?
+- **Vital** : ?
 
 Structure:
 
@@ -193,7 +193,7 @@ This message
 
 **NOTE:** Not used by DDNet servers.
 
-- **Is Vital** : ?
+- **Vital** : ?
 
 Structure:
 
@@ -205,7 +205,7 @@ Structure:
 
 This message
 
-- **Is Vital** : ✅
+- **Vital** : ✅
 
 Structure:
 
@@ -219,7 +219,7 @@ Structure:
 
 This message
 
-- **Is Vital** : ✅
+- **Vital** : ✅
 
 Structure:
 
@@ -234,7 +234,7 @@ Structure:
 
 This message
 
-- **Is Vital** : ✅
+- **Vital** : ✅
 
 Structure:
 
@@ -247,7 +247,7 @@ Structure:
 
 This message
 
-- **Is Vital** : ✅
+- **Vital** : ✅
 
 Structure:
 
@@ -259,7 +259,7 @@ Structure:
 
 This message
 
-- **Is Vital** : ✅
+- **Vital** : ✅
 
 Structure:
 
@@ -271,7 +271,7 @@ Structure:
 
 This message
 
-- **Is Vital** : ✅
+- **Vital** : ✅
 
 Structure:
 
@@ -289,7 +289,7 @@ Structure:
 
 This message
 
-- **Is Vital** : ✅
+- **Vital** : ✅
 
 Structure:
 
@@ -307,7 +307,7 @@ Structure:
 
 This message
 
-- **Is Vital** : ✅
+- **Vital** : ✅
 
 Structure:
 
@@ -317,7 +317,7 @@ Structure:
 
 This message
 
-- **Is Vital** : ✅
+- **Vital** : ✅
 
 Structure:
 
@@ -329,7 +329,7 @@ Structure:
 
 This message
 
-- **Is Vital** : ✅
+- **Vital** : ✅
 
 Structure:
 
@@ -341,7 +341,7 @@ Structure:
 
 This message
 
-- **Is Vital** : ✅
+- **Vital** : ✅
 
 Structure:
 

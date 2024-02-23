@@ -23,6 +23,12 @@ chunkByte[3]    // message id
 chunkByte[4...] // payload   
 ```
 
+:::info
+The sequence value is the number of vital chunks sent by the server to the client + chunk position. 
+
+The sequence number of the last sent vital chunk should be the peer ACK (the ACK the destination uses to track how much vital chunks it received from you).
+:::
+
 ## Non-Vital Chunk Structure
 
 Non-vital chunks have the following bytes structure:
