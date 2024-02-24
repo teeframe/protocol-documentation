@@ -131,7 +131,7 @@ Snap is a complex type of chunk. You can find more information about it on [Snap
 
 ## 9 - NETMSG_INPUTTIMING
 
-This message
+This message is a response from the server to the client "INPUT" chunk.
 
 - **Vital** : ❌
 - **Instant Sending** : ❌
@@ -143,6 +143,10 @@ Structure:
 | ------------- | ------ | ----------- |
 | Intended Tick | **Integer** | TODO |
 | Time Left     | **Integer** | TODO |
+
+:::info
+Check the [Input & Input Timing Chunks](./../packets/default-packets.md#input--input-timing-chunks) section for more information about this chunk.
+:::
 
 ## 10 - NETMSG_RCON_AUTH_STATUS
 
@@ -199,7 +203,7 @@ Structure:
 
 ## 16 - NETMSG_INPUT
 
-This message
+This message is sent by the client to the server with the player's input.
 
 - **Vital** : ❌
 - **Instant Sending** : ✅
@@ -221,6 +225,10 @@ Structure:
 | Input -> WantedWeapon | **Integer** | TODO |
 | Input -> NextWeapon | **Integer** | TODO |
 | Input -> PrevWeapon | **Integer** | TODO |
+
+:::info
+Check the [Input & Input Timing Chunks](./../packets/default-packets.md#input--input-timing-chunks) section for more information about this chunk.
+:::
 
 ## 17 - NETMSG_RCON_CMD
 

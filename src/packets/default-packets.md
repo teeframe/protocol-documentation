@@ -91,7 +91,7 @@ The maximum size of a snap chunk payload is 900 bytes. **Removed Items Count and
 
 ### Snap Slice
 
-Sometimes you cannot fit all the items in a single snap chunk due to the snap chunk size limit, so you need to split them into multiple snap slices (and multiple packets). **This is when the Snap Slice comes in.**
+Sometimes you cannot fit all the items in a single snap chunk due to the snap chunk payload size limit, so you need to split them into multiple snap slices (and multiple packets). **This is when the Snap Slice comes in.**
 
 Snap Slice will be sent with the same current tick, delta tick, and CRC. Multiple packets with a snap slice will be sent until full payload (and items) are sent. The Snap Slice has two extra fields: **Total Number** and **Current Number**.
 
