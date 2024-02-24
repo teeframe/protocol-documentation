@@ -63,9 +63,3 @@ itemByte[0]     // Item ID
 itemByte[1]     // ID
 itemByte[2-...] // Payload
 ```
-
-## String Packing To Snap Items
-
-There is only one snap item that contains a string, the "**CLIENT INFO**". The way you pack strings to this snap is different from the default way. You will need to convert the string with a fixed size into multiple integers.
-
-You can find the implementation of the pack and unpack of [the method here](https://github.com/teeworlds/teeworlds/blob/0.6/src/game/gamecore.h#L72-L104).

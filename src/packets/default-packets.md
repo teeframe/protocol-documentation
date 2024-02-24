@@ -39,6 +39,28 @@ You can find the chunks listing that must be sent instantly in the [System Messa
 Every default packet has a maximum of 255 chunks regardless of the sum of chunk sizes.
 :::
 
+## Input & Input Timing Chunks
+
+"**INPUT**" and "**INPUT_TIMING**" chunks are one of the most important chunks in the game. They are used to send the player's input to the server and to synchronize the game state between the server and the client.
+
+The "**INPUT**" chunk is sent by the client very often and contain all the player's input. The "**INPUT_TIMING**" chunk is sent by the server to the client as an answer. **Below, you can find the explanation of special fields that may be difficult to calculate.**
+
+The "**INPUT**" have the following special values:
+
+- **Ack Game Tick** : the last current tick received from a snap chunk from the server.
+- **Prediction Tick** : the tick of the server that the client is predicting (based on the tick difference between last snap and the snap before the last one).
+
+The "**INPUT_TIMING**" chunk have the following special values:
+
+- **Intended Tick** : the prediction tick value sent by the client.
+- **Time Left** : the time left to the intended tick (in milliseconds).
+
+As a server, you will need to use a queue to save all the inputs received from the client, and apply them when the server reaches the intended tick. **You will also need to discard every input that is older than the biggest prediction tick received from the client.**
+
+:::info
+By decoding these chunks, you can calculate the latency used by the "player info" snap item.
+:::
+
 ## Understanding Snaps
 
 Some of the system message chunks are called Snaps. **They are used by the server to send the Snap Items to the client.** One snap chunk can contain multiple snap items (or no items at all). Snap items represent the state of something in the game world, such as tees and projectiles.
@@ -46,10 +68,10 @@ Some of the system message chunks are called Snaps. **They are used by the serve
 Every snap chunk contains at least a current tick and delta tick value:
 
 - **Current Tick** : the current tick of the server.
-- **Delta Tick** : the current tick - (the Ack Game Tick value from the last received "INPUT" chunk).
+- **Delta Tick** : the current tick - (the Ack Game Tick value from the last received "**INPUT**" chunk).
 
 :::info
-Delta tick will be current tick - (-1) if the server has not received any previous "INPUT" chunk from the client.
+Delta tick will be current tick - (-1) if the server has not received any previous "**INPUT**" chunk from the client.
 :::
 
 ## Snap Types
@@ -59,23 +81,35 @@ There are three types of snap chunks: **Snap Empty, Snap Single, and Snap Slice*
 These data are CRC, a removed items count, a delta items count, and one or multiple snap items. Every snap item has an item ID, ID, and a custom payload structure to follow.
 
 - **CRC** : integer value that is used to check the integrity of the snap chunk. 
-- **Size** : the size of the snap chunk. Size must include removed items count, delta items count, and snap items.
+- **Size** : the size of the snap chunk.*
 - **Removed Items Count** : amount of items that were removed compared to the last snap. 
 - **Delta Items Count** : amount of items present in the current snap. 
 
+:::warning
+The maximum size of a snap chunk payload is 900 bytes. **Removed Items Count and Delta Items Count** are part of the snap payload and it sizes must be considered - *also for the Size field.
+:::
+
 ### Snap Slice
 
-Sometimes you cannot fit all the items in a single snap chunk due to the [Size Limits](./../fundamentals.md#size-limits), so you need to split them into multiple snap slices (and multiple packets). **This is when the Snap Slice comes in.**
+Sometimes you cannot fit all the items in a single snap chunk due to the snap chunk size limit, so you need to split them into multiple snap slices (and multiple packets). **This is when the Snap Slice comes in.**
 
-Snap Slice will be sent with the same current tick, delta tick, and CRC. Multiple packets with a snap slice will be sent until all items are sent. The Snap Slice has two extra fields: **Total Number** and **Current Number**.
+Snap Slice will be sent with the same current tick, delta tick, and CRC. Multiple packets with a snap slice will be sent until full payload (and items) are sent. The Snap Slice has two extra fields: **Total Number** and **Current Number**.
 
 :::warning
-**Removed Items Count and Delta Items Count** are part of the snap payload and must be sent only in the first Snap Slice.
+1. **Removed Items Count and Delta Items Count** are part of the snap payload and must be sent only in the first Snap Slice.
+
+2. The maximum amount of Snap Slices of a single snap payload is 64.
 :::
 
 ### When to send Snap Items
 
 TODO
+
+## String Packing To Snap Items
+
+There is only one snap item that contains a string, the "**CLIENT_INFO**". The way you pack strings to this snap is different from the default way. You will need to convert the string with a fixed size into multiple integers.
+
+You can find the implementation of the pack and unpack of [the method here](https://github.com/teeworlds/teeworlds/blob/0.6/src/game/gamecore.h#L72-L104).
 
 ### Calculating CRC
 
