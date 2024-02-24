@@ -41,11 +41,11 @@ Every default packet has a maximum of 255 chunks regardless of the sum of chunk 
 
 ## Re-sending Chunks
 
-Some times the internet connection can fail, and some "VITAL" chunks may not be received by the destination. When that happens, the destination will send a packet with the "RESEND" flag and, as usual, the peer ACK value. 
+Some times the internet connection can fail, and some "VITAL" chunks may not be received by the destination. When that happens, the destination will send a packet with the "RESEND" flag and, as usual, the peer ACK number. 
 
-The source will need to re-send all the chunks with a sequence number greater than the ACK number. The response packet will have a "RESEND" flag and all the chunks will also have a chunk flag "RESEND".
+The source will need to re-send all the chunks with a sequence number greater than the peer ACK number. The response packet will have a "RESEND" flag and all the chunks will also have a chunk flag "RESEND".
 
-**For this to be done smoothly, you, as the client or server, must store all the vital chunks that you have sent.** You can remove the stored chunks according to the latest peer ack received and stored chunk sequence.
+**For this to be done smoothly, you, as the client or server, must store all the vital chunks that you have sent.** You can remove the stored chunks according to the latest peer ack received and stored chunk sequence number.
 
 ## Input & Input Timing Chunks
 
