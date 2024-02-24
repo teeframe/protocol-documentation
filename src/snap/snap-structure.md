@@ -23,7 +23,7 @@ chunkByte[*]     // delta tick          - integer
 chunkByte[*]     // crc                 - integer
 chunkByte[*]     // size                - integer
 chunkByte[*]     // removed items count - integer
-chunkByte[*]     // delta items count   - integer
+chunkByte[*]     // updated items count - integer
 chunkByte[*]     // unused              - integer (0)  
 chunkByte[*-...] // snap items
 ```
@@ -45,7 +45,7 @@ chunkByte[*]     // total number        - integer
 chunkByte[*]     // current number      - integer
 chunkByte[*]     // size                - integer
 chunkByte[*]     // removed items count - integer
-chunkByte[*]     // delta items count   - integer
+chunkByte[*]     // updated items count - integer
 chunkByte[*]     // unused              - integer (0) 
 chunkByte[*-...] // snap items
 ```

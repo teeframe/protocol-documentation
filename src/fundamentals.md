@@ -4,7 +4,7 @@ By learning how the data is encoded and decoded, you can understand how the fund
 
 ## Packet Flags
 
-Flags are used to define the type of packet and extra information. The flag value is present in the packet header of every kind of packet. Every flag can be combined with other flags, and the packet header will have a single byte to store all flags.
+Flags are used to define the type of packet and extra information. The flag value is present in the packet header of every kind of packet. **Every flag can be combined with other flags, and the packet header will have a single byte to store all flags.**
 
 The available flags are:
 
