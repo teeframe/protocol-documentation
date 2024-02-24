@@ -109,7 +109,7 @@ Snap Slice will be sent with the same current tick, delta tick, and CRC. Multipl
 2. The maximum amount of Snap Slices of a single snap payload is 64.
 :::
 
-### When to send Snaps
+## When to send Snaps
 
 One crucial thing to understand is when you should send snap chunks. For that, you, as a server, will need to use a Snap State value for every client. The possible Snap State values are "INIT", "FULL" and "RECOVER". **Every new client will start with the "INIT" state.**
 
@@ -131,7 +131,7 @@ There is only one snap item that contains a string, the "**CLIENT_INFO**". The w
 
 You can find the implementation of the pack and unpack of [the method here](https://github.com/teeworlds/teeworlds/blob/0.6/src/game/gamecore.h#L72-L104).
 
-### Calculating CRC
+## Calculating CRC
 
 To calculate the snap chunk CRC you can use the following pseudo-code:
 
