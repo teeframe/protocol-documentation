@@ -28,9 +28,7 @@ chunkByte[4...] // payload
 ```
 
 :::info
-The sequence value is the number of vital chunks sent by the server to the client + chunk position. 
-
-The sequence number of the last sent vital chunk should be the peer ACK (the ACK the destination uses to track how much vital chunks it received from you).
+You can learn more about the sequence value at the [Vital & Non-Vital Chunks](./../packets/chunks-concept.md#vital-non-vital-chunks) section.
 :::
 
 ## Non-Vital Chunk Structure

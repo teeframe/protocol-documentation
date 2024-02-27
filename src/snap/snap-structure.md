@@ -25,7 +25,7 @@ chunkByte[*]     // size                - integer
 chunkByte[*]     // removed items count - integer
 chunkByte[*]     // updated items count - integer
 chunkByte[*]     // unused              - integer (0)  
-chunkByte[*-...] // snap items
+chunkByte[*-...] // snap payload
 ```
 
 :::info
@@ -47,7 +47,7 @@ chunkByte[*]     // size                - integer
 chunkByte[*]     // removed items count - integer
 chunkByte[*]     // updated items count - integer
 chunkByte[*]     // unused              - integer (0) 
-chunkByte[*-...] // snap items
+chunkByte[*-...] // snap payload
 ```
 
 :::info
@@ -59,7 +59,7 @@ Snap Slice has a particular way to send the Snap Items. Check the [Snap Slice](.
 Snap Item have the following bytes structure:
 
 ```sh
-itemByte[0]     // Item ID
-itemByte[1]     // ID
-itemByte[2-...] // Payload
+itemByte[0]     // item id
+itemByte[1]     // id
+itemByte[2-...] // payload (only integers)
 ```
