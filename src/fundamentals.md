@@ -56,7 +56,7 @@ These packets are used to establish and maintain the connection. They are utiliz
 These packets are used to send game-related information. They are utilized to send and receive game data, such as player input, game state, and other game-related information. **Every default packet may contain multiple data, and each data is called "chunk".**
 
 :::info
-Each chunk have it chunk flags. "VITAL" is one of the chunk flags. This is explained on [Default Packets](./packets/default-packets.md), [Chunk Concept](./packets/chunk-concepts.md). and [Chunk Structure](./chunks/chunk-structure.md) page.
+Each chunk have it chunk flags. "VITAL" is one of the chunk flags. This is explained on [Default Packets](./packets/default-packets.md), [Chunk Concept](./packets/chunks-concept.md). and [Chunk Structure](./chunks/chunk-structure.md) page.
 :::
 
 ## Tick System
