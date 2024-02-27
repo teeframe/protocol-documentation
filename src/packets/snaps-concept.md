@@ -49,7 +49,12 @@ payloadInt[X] = payloadInt[X] - deltaPayloadInt[X]
 ```
 
 :::info
-Note that to calculate the payload difference, the server will loop all item payload packet integers and NOT the item payload bytes.
+***1.*** Note that to calculate the payload difference, the server will loop all item payload packet integers and NOT the item payload bytes.
+
+***2.*** Difference Example : 
+- Delta Item X Position : 50
+- Current Item X Position : 10
+- Final Payload X Position : -40 *(10 - 50)*
 :::
 
 ## Snap Slice
