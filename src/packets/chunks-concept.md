@@ -14,42 +14,58 @@ Fundamentally, they work in the same way. Theoretically, the System Messages are
 - **heinrich5991**: both snapshots and inputs are transmitted in a way that makes the engine more or less oblivious of its contents
 :::
 
+## Vital & Non-Vital Chunks
+
+Whether a chunk is a game or system message, it can be vital or non-vital. **Vital chunks have a sequence number and must be received by the destination (and in order)**, while non-vital chunks are chunks that do not have a sequence number, and reaching the destination is not crucial.
+
+You can find the chunks listing that are vital or non-vital in the [System Messages](./../chunks/system-messages.md) and [Game Messages](./../chunks/game-messages.md) pages.
+
+:::info
+***1.*** The sequence value is the number of vital chunks sent by the source to the destination + chunk position. 
+
+***2.*** The sequence number of the last sent vital chunk should be the peer ACK (the ACK the destination uses to track how much vital chunks it received from you).
+:::
+
 ## Chunks Queueing
 
-Since multiple chunks can be added in a single packet, the server and the client should queue the chunks to be sent. **Some chunks must be sent instantly, and when such a chunk is added to the queue, the entire queue must be processed instantly.**
+Since multiple chunks can be added in a single packet, the server and the client should queue the chunks to be sent. When the chunk queue reaches the [packet size limit](./../fundamentals.md#size-limits), the queue must be processed. 
 
-You can find the chunks listing that must be sent instantly in the [System Messages](./../chunks/system-messages.md) and [Game Messages](./../chunks/game-messages.md) pages.
+**Some chunks must be sent instantly, and when such a chunk is added to the queue, the entire queue must be processed.** You can find the chunks listing that must be sent instantly in the [System Messages](./../chunks/system-messages.md) and [Game Messages](./../chunks/game-messages.md) pages.
 
-:::warning
-Every default packet has a maximum of 255 chunks regardless of the sum of chunk sizes.
+:::info
+Every default packet has a maximum of 255 chunks regardless of the packet size limit.
 :::
 
 ## Re-sending Chunks
 
-Some times the internet connection can fail, and some "VITAL" chunks may not be received by the destination. When that happens, the destination will send a packet with the "RESEND" flag and, as usual, the peer ACK number. 
+Some times the internet connection can fail, and some [vital chunks](#vital-non-vital-chunks) may not be received by the destination. When that happens, the destination must send a packet with the [RESEND flag](./../fundamentals.md#packet-flags) and, as usual, the peer ACK number. 
 
-The source will need to re-send all the chunks with a sequence number greater than the peer ACK number. The response packet will have a "RESEND" flag and all the chunks will also have a chunk flag "RESEND".
+The source will need to re-send all the chunks with a sequence number greater than the peer ACK number. The response packet must have a [RESEND flag](./../fundamentals.md#packet-flags) and all the chunks must also have a [RESEND chunk flag](./../chunks/chunk-structure.md#chunk-flags).
 
 **For this to be done smoothly, you, as the client or server, must store all the vital chunks that you have sent.** You can remove the stored chunks according to the latest peer ack received and stored chunk sequence number.
 
 ## Input & Input Timing Chunks
 
-"**INPUT**" and "**INPUT_TIMING**" chunks are one of the most important chunks in the game. They are used to send the player's input to the server and to synchronize the game state between the server and the client.
+[Input](./../chunks/system-messages.md#_16-netmsg-input) and [Input Timing](./../chunks/system-messages.md##_9-netmsg-inputtiming) chunks are one of the most important chunks in the game and therefore will be covered separately in this topic. 
 
-The "**INPUT**" chunk is sent by the client very often and contain all the player's input. The "**INPUT_TIMING**" chunk is sent by the server to the client as an answer. **Below, you can find the explanation of special fields that may be difficult to calculate.**
+The [Input](./../chunks/system-messages.md#_16-netmsg-input) chunk is sent by the client to the server and contains the tick value of the latest [snap chunk](./snaps-concept.md) received from the server (and, prediction tick, and player input's). **This value will be crucial used to calculate the [snap items difference](./snaps-concept.md#snap-payload).**
 
-The "**INPUT**" have the following special values:
+The [Input Timing](./../chunks/system-messages.md##_9-netmsg-inputtiming) chunk is sent by the server to the client as an answer to the [Input](./../chunks/system-messages.md#_16-netmsg-input) chunk. It contains the intended tick value sent by the client and the time left to the intended tick. **This chunk is used to adjust the client's prediction margin.**
 
-- **Ack Game Tick** : the last current tick received from a snap chunk from the server.
-- **Prediction Tick** : the tick of the server that the client is predicting (based on the tick difference between last snap and the snap before the last one).
+As a server, you must use a queue to save all the inputs received from the client, and apply them when the server reaches the prediction tick. **You will also need to discard every input that is older than the biggest prediction tick received from the client.**
 
-The "**INPUT_TIMING**" chunk have the following special values:
+Below, you can find the explanation of particular values of both chunks that may be difficult to understand or calculate.
+
+### Input particular values
+
+- **Ack Game Tick** : the tick value from the last received snap chunk from the server.
+- **Prediction Tick** : the tick of the server that the client is predicting.
+
+### Input Timing particular values
 
 - **Intended Tick** : the prediction tick value sent by the client.
 - **Time Left** : the time left to the intended tick (in milliseconds).
-
-As a server, you will need to use a queue to save all the inputs received from the client, and apply them when the server reaches the prediction tick. **You will also need to discard every input that is older than the biggest prediction tick received from the client.**
-
+<br><br>
 :::info
 By decoding these chunks, you can calculate the latency used by the "player info" snap item.
 :::

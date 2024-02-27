@@ -17,7 +17,7 @@ The available flags are:
 <!-- | 16       | FLAG_SECURITY_TOKEN       | -->
 
 :::info
-**1** -> The flag of final value "2" is to identify connection-less messages, but they are not implemented by TeeFrame and it discard all connection-less packets.
+***1.*** The flag of final value "2" is to identify connection-less messages, but TeeFrame does not implement them and discards all connection-less packets.
 :::
 
 ## Sequence Number

@@ -145,7 +145,7 @@ Structure:
 | Time Left     | **Integer** | TODO |
 
 :::info
-Check the [Input & Input Timing Chunks](./../packets/default-packets.md#input--input-timing-chunks) section for more information about this chunk.
+Check the [Input & Input Timing Chunks](./../packets/chunks-concept.md#input-input-timing-chunks) section for more information about this chunk.
 :::
 
 ## 10 - NETMSG_RCON_AUTH_STATUS
@@ -215,6 +215,7 @@ Structure:
 | ------------- | ------ | ----------- |
 | Ack Game Tick      | **Integer** | TODO |
 | Prediction Tick    | **Integer** | TODO |
+| Input Size         | **Integer** | TODO |
 | Input -> Direction | **Integer** | TODO |
 | Input -> Target X  | **Integer** | TODO |
 | Input -> Target Y  | **Integer** | TODO |
@@ -227,7 +228,7 @@ Structure:
 | Input -> PrevWeapon | **Integer** | TODO |
 
 :::info
-Check the [Input & Input Timing Chunks](./../packets/default-packets.md#input--input-timing-chunks) section for more information about this chunk.
+Check the [Input & Input Timing Chunks](./../packets/chunks-concept.md#input-input-timing-chunks) section for more information about this chunk.
 :::
 
 ## 17 - NETMSG_RCON_CMD
