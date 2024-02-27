@@ -1,10 +1,10 @@
 # Control Messages
 
-This page describes the control messages structure, all kind of control messages available and its purpose.
+This page describes the control messages packet structure, all kind of control messages available and its purpose.
 
 ## Structure
 
-Control messages have simple structure packet structure. They have a header and payload in the following way:
+Control messages packet have a simple structure structure. They have a header and payload in the following way:
 
 ```sh
 byte[0]     // 6bit flags, 2bit ack
@@ -39,7 +39,7 @@ This message is the very first packet the is sent by the client to initiate a ne
 
 ### 2 - CONNECT_ACCEPT
 
-This message is the response to the "CONNECT" message. It contains the security token that will be used to send and receive packets from now on. There is also no extra data in this message.
+This message is the response to the "CONNECT" message and confirms the server received the initial message. There is also no extra data in this message.
 
 ### 4 - CLOSE
 

@@ -78,7 +78,12 @@ You may find values being considered as boolean throughout this documentation. A
 
 ## Huffman Compression
 
-Packets can be compressed using Huffman compression. The Teeworlds packet header is never compressed, only its payload. The packet header sets a "COMPRESSION" flag if the payload is compressed. Technically every packet could be compressed or uncompressed.
+Packets can be compressed using Huffman compression. The Teeworlds packet header is never compressed, only its payload. The packet header sets a "COMPRESSION" flag if the payload is compressed.
+
+Theoretically every packet could be compressed or uncompressed, however, your implementation must follow these rules: 
+
+- [Control Messages](./fundamentals.md#control-messages) must never be compressed
+- [Default Packets](./fundamentals.md#default-packets) must always be compressed.
 
 Huffman compression is an algorithm that is not specific to Teeworlds. You can learn from any documentation, [like this Youtube video](https://www.youtube.com/watch?v=iiGZ947Tcck), to understand its fundamentals.
 

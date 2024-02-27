@@ -39,9 +39,10 @@ export default defineConfig({
       {
         text: 'Packets',
         items: [
-          { text: 'Connection-less Messages', link: '/packets/connection-less-messages' },
           { text: 'Control Messages', link: '/packets/control-messages' },
           { text: 'Default Packets', link: '/packets/default-packets' },
+          { text: 'Chunks Concept', link: '/packets/chunks-concept' },
+          { text: 'Snaps Concept', link: '/packets/snaps-concept' },
         ]
       },
 
@@ -58,7 +59,8 @@ export default defineConfig({
         text: 'Snaps',
         items: [
           { text: 'Snap Structure', link: '/snap/snap-structure' },
-          { text: 'Snap Items', link: '/snap/snap-items' },        ]
+          { text: 'Snap Items', link: '/snap/snap-items' },
+        ]
       },
 
       // {

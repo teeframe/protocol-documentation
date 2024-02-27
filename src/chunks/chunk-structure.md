@@ -11,6 +11,10 @@ The available chunk flags are:
 | 1 << 0   | 1           | FLAG_VITAL                |
 | 1 << 1   | 2           | FLAG_RESEND               |
 
+:::info
+Every flag can be [combined with others](./../fundamentals.md#combining-flags).
+:::
+
 ## Vital Chunk Structure
 
 Vital chunks have the following bytes structure:
