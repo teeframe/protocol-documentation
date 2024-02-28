@@ -10,8 +10,8 @@ This page describes the snap items structure, all kinds of snap items, and their
 | 3             | [NETOBJTYPE_LASER](#3---netobjtype_laser) |
 | 4             | [NETOBJTYPE_PICKUP](#4---netobjtype_pickup) |
 | 5             | [NETOBJTYPE_FLAG](#5---netobjtype_flag) |
-| 6             | [NETOBJTYPE_GAMEDATA](#6---netobjtype_gamedata) |
-| 7             | [NETOBJTYPE_GAMEINFO](#7---netobjtype_gameinfo) |
+| 6             | [NETOBJTYPE_GAMEINFO](#6---netobjtype_gameinfo) |
+| 7             | [NETOBJTYPE_GAMEDATA](#7---netobjtype_gamedata) |
 | 8             | *Unused* |
 | 9             | [NETOBJTYPE_CHARACTER](#9---netobjtype_character) |
 | 10            | [NETOBJTYPE_PLAYERINFO](#10---netobjtype_playerinfo) |
@@ -88,7 +88,22 @@ Structure:
 | Y             | **Integer** | TODO |
 | Team          | **Integer** | TODO |
 
-## 6 - NETOBJTYPE_GAMEDATA
+## 6 - NETOBJTYPE_GAMEINFO
+
+This item
+
+- **Sends** : 
+
+Structure:
+
+| Field         | Type   | Description |
+| ------------- | ------ | ----------- |
+| TeamScoreRed    | **Integer** | TODO |
+| TeamScoreBlue   | **Integer** | TODO |
+| FlagCarrierRed  | **Integer** | TODO |
+| FlagCarrierBlue | **Integer** | TODO |
+
+## 7 - NETOBJTYPE_GAMEDATA
 
 This item
 
@@ -107,20 +122,6 @@ Structure:
 | RoundNum | **Integer** | TODO |
 | RoundCurrent | **Integer** | TODO |
 
-## 7 - NETOBJTYPE_GAMEINFO
-
-This item
-
-- **Sends** : 
-
-Structure:
-
-| Field         | Type   | Description |
-| ------------- | ------ | ----------- |
-| TeamScoreRed    | **Integer** | TODO |
-| TeamScoreBlue   | **Integer** | TODO |
-| FlagCarrierRed  | **Integer** | TODO |
-| FlagCarrierBlue | **Integer** | TODO |
 
 ## 9 - NETOBJTYPE_CHARACTER
 
