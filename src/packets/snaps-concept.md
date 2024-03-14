@@ -85,12 +85,6 @@ The Snap State system is a way to not flood the client with snap chunks when it 
 
 <!-- **Another important thing is to understand when you, as a server, should send certain snap items.** For that, on the [Snap Items](./../snap/snap-items.md) page, for each item there is a specification of when you should send it. -->
 
-## String Packing To Snap Items
-
-There is one snap item that contains a string, the ***CLIENT INFO***. The way you pack strings to this snap differs from the default since the snap payload can only contain integers.
-
-You will need to convert the string with a fixed size into multiple integers using a specific method. You can find the implementation of the pack and unpack of [the method here](https://github.com/teeworlds/teeworlds/blob/0.6/src/game/gamecore.h#L72-L104).
-
 ## Calculating CRC
 
 CRC (Cyclic Redundancy Check) is the value used to check the integrity of the snap payload. To calculate the snap CRC, you can implement the following pseudo-code:
@@ -104,11 +98,61 @@ foreach (snapItems as snapItem) {
     while (true) {
         extractInt = itemPayload->extractInt()
 
-        if (extractInt == -1) {
+        if (extractInt == null) {
             break
         }
 
         crc += extractInt
     }
 }
+
+crc = toInt32(crc)
 ```
+
+:::warning
+The CRC result must be a signed 32-bit integer. You must ensure the correct overflow, as explained in the [Integer Overflow](./../fundamentals.md#integer-overflow) section.
+:::
+
+## String Packing To Snap Items
+
+There is one snap item that contains a string, the ***CLIENT INFO***. The way you pack strings to this snap differs from the default since the snap payload can only contain integers.
+
+You will need to convert the string with a fixed size into multiple integers using a specific method. You can find the implementation of the pack and unpack of [the method here](https://github.com/teeworlds/teeworlds/blob/0.6/src/game/gamecore.h#L72-L104). Or you can use the following pack pseudo-code:
+
+```c
+function convertCharsToIntArray(chars, intNum)
+{
+    integers   = array_fill(0, intNum, 0) // Creates a new array with intNum elements, filled with 0
+    charsCount = count(chars)
+    index      = 0
+
+    for (i = 0; i < intNum; i++) {
+        buffer = [0, 0, 0, 0]
+
+        for (
+            c = 0;
+            c < 4 && index < charsCount;
+            c++, index++
+        ) {
+            buffer[c] = chars[index + 1]
+        }
+
+        integers[i] = toInt32(
+            ((buffer[0] + 128) << 24) | ((buffer[1] + 128) << 16) | ((buffer[2] + 128) << 8) | ((buffer[3] + 128) << 0)
+        )
+    }
+
+    integers[num - 1] = toInt32(integers[num - 1] & 0xFFFF_FF00)
+
+    return integers
+}
+```
+:::info
+**1.** Every integer can contain 4 characters of the string. With the exception of the last character of the last integer, that must be empty.
+
+**2.** *Example:* if you pass intNum as 5, the maximum string size will be 19 (20 - 1) characters.
+:::
+
+:::warning
+Every converted integer must be a signed 32-bit integer. You must ensure the correct overflow, as explained in the [Integer Overflow](./../fundamentals.md#integer-overflow) section.
+:::

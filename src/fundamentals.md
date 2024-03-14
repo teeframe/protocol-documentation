@@ -80,6 +80,21 @@ FLAG_COMPRESSION = 1 << 3
 flags = FLAG_TYPE_CONTROL | FLAG_COMPRESSION
 ```
 
+## Integer Overflow
+
+In some cases, the reference implementation uses signed 32-bit integers, which have the maximum value of 2147483647 (0x7FFFFFFF). When the value reaches the maximum, it will overflow to the minimum value of -2147483648. **Depending on the language you are using, integers may overflow differently from the expected.**
+
+This overflow is expected in some cases, and **these cases will be highlighted in the documentation from now on, and should be handled by your implementation.** You can use the following pseudo-code to ensure the correct overflow:
+
+```c
+function toInt32(value)
+{
+    value = value & 0xFFFFFFFF
+
+    return value & 0x80000000 ? -((~value & 0xFFFFFFFF) + 1) : value
+}
+```
+
 ## Extracting Flags and ACK
 
 Control Messages and Default Packets have in common the presence of Flags and ACK. However, this information is "mixed" into two bytes of the packet header, as follows:
