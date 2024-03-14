@@ -85,7 +85,7 @@ The Snap State system is a way to not flood the client with snap chunks when it 
 
 <!-- **Another important thing is to understand when you, as a server, should send certain snap items.** For that, on the [Snap Items](./../snap/snap-items.md) page, for each item there is a specification of when you should send it. -->
 
-## Snap IDs
+## Snap Item ID & ID
 
 Every snap item, in addition to the item ID, has it own ID. **The ID is a unique identifier for the item in the current game context.** It is important to understand that every snap item will have a different way to have an ID assigned.
 
