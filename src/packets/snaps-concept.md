@@ -87,7 +87,7 @@ The Snap State system is a way to not flood the client with snap chunks when it 
 
 ## Snap IDs
 
-Every snap item, in addition to the item ID, has it own ID. **The ID is a unique identifier for the item in the current game context.** It is important to understand that every snap item will have a different way to generate its ID.
+Every snap item, in addition to the item ID, has it own ID. **The ID is a unique identifier for the item in the current game context.** It is important to understand that every snap item will have a different way to have an ID assigned.
 
 There are the following ways for a snap item to have an ID assigned:
 
@@ -96,7 +96,7 @@ There are the following ways for a snap item to have an ID assigned:
 - **Snap ID Pool** : the ID will obtained through a pool that controls busy and available ids from 0 to a maximum number of 16384 (16 * 1024).
 
 :::info
-You can find which way each snap item uses to generate it ID on the [Snap Items](./../snap/snap-items.md) page.
+You can find which way each snap item uses to have an ID assigned on the [Snap Items](./../snap/snap-items.md) page.
 :::
 
 ## Calculating CRC
