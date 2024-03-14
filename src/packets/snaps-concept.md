@@ -45,7 +45,7 @@ There are the following ways for a snap item to have an ID assigned:
 - **None** : the ID will always be 0.
 - **Connection** : the ID will be the connection index of the player (0 to 63).
 - **Event** : the ID will be the index of the item in the event queue of the current snap. From 0 to 128 (this maximum value is not a rule).
-- **Snap ID Pool** : the ID will obtained through a pool that controls busy and available ids from 0 to a maximum number of 16384 (16 * 1024).
+- **Snap ID Pool** : the ID will obtained through a pool that controls reserved and free ids from 0 to a maximum number of 16384 (16 * 1024).
 
 :::info
 You can find which way each snap item uses to have an ID assigned on the [Snap Items](./../snap/snap-items.md) page.
