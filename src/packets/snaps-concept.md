@@ -36,6 +36,21 @@ These data are CRC, removed items count, updated items count, and the snap paylo
 The maximum size of a snap chunk payload is 900 bytes. **Removed Items Count and Updated Items Count** are part of the snap payload and it sizes must be considered - ¹also for the Size field.
 :::
 
+## Snap Item ID & ID
+
+Every snap item, in addition to the item ID, has it own ID. **The ID is a unique identifier for the item in the current game context.** It is important to understand that every snap item will have a different way to have an ID assigned.
+
+There are the following ways for a snap item to have an ID assigned:
+
+- **None** : the ID will always be 0.
+- **Connection** : the ID will be the connection index of the player (0 to 63).
+- **Event** : the ID will be the index of the item in the event queue of the current snap. From 0 to 128 (this maximum value is not a rule).
+- **Snap ID Pool** : the ID will obtained through a pool that controls busy and available ids from 0 to a maximum number of 16384 (16 * 1024).
+
+:::info
+You can find which way each snap item uses to have an ID assigned on the [Snap Items](./../snap/snap-items.md) page.
+:::
+
 ## Snap Payload
 
 The snap payload sent by the server is not the list of items, as it depends on the context, the removed items count and updated items count.
@@ -84,21 +99,6 @@ The Snap State system is a way to not flood the client with snap chunks when it 
 :::
 
 <!-- **Another important thing is to understand when you, as a server, should send certain snap items.** For that, on the [Snap Items](./../snap/snap-items.md) page, for each item there is a specification of when you should send it. -->
-
-## Snap Item ID & ID
-
-Every snap item, in addition to the item ID, has it own ID. **The ID is a unique identifier for the item in the current game context.** It is important to understand that every snap item will have a different way to have an ID assigned.
-
-There are the following ways for a snap item to have an ID assigned:
-
-- **None** : the ID will always be 0.
-- **Connection** : the ID will be the connection index of the player (0 to 63).
-- **Event** : the ID will be the index of the item in the event queue of the current snap. From 0 to 128 (this maximum value is not a rule).
-- **Snap ID Pool** : the ID will obtained through a pool that controls busy and available ids from 0 to a maximum number of 16384 (16 * 1024).
-
-:::info
-You can find which way each snap item uses to have an ID assigned on the [Snap Items](./../snap/snap-items.md) page.
-:::
 
 ## Calculating CRC
 
