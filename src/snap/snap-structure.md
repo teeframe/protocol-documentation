@@ -29,7 +29,7 @@ chunkByte[*-...] // snap payload
 ```
 
 :::info
-It is recommended to check the [Snap Types](./../packets/default-packets.md#snap-types) section for more information about these values.
+It is recommended to check the [Snap Types](./../packets/snaps-concept.md#snap-types) section for more information about these values.
 :::
 
 ## Snap Slice Structure
@@ -51,7 +51,7 @@ chunkByte[*-...] // snap payload
 ```
 
 :::info
-Snap Slice has a particular way to send the Snap Items. Check the [Snap Slice](./../packets/default-packets.md#snap-slice) section for more information.
+Snap Slice has a particular way to send the Snap Items. Check the [Snap Slice](./../packets/snaps-concept.md#snap-slice) section for more information.
 :::
 
 ## Snap Item Structure
