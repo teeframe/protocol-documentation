@@ -111,3 +111,47 @@ The first byte contains the flags and the first 2 bits of the ACK number. The se
 flags = byte[0] >> 4
 ack = (byte[0] & 0x0F) << 8 | byte[1]
 ```
+
+<!--## DDNet Specific Messages & Snap Items
+
+DDNet extends the protocol with UUID-based identifiers for game / system messages and snap items that go beyond the fixed numeric ID range. Instead of sending a numeric type byte, extended items use message ID `0` followed by a 16-byte UUIDv3 that identifies the item type.
+
+### UUIDv3 Calculation
+
+Each UUID string is hashed into a 16-byte UUIDv3 per RFC 4122:
+
+```sh
+UUID = MD5(TEEWORLDS_NAMESPACE + name_without_null)
+```
+
+Where:
+
+| Parameter | Value |
+| --------- | :---: |
+| `TEEWORLDS_NAMESPACE` | The fixed 16-byte namespace UUID: `e05ddaaa-c4e6-4cfb-b642-5d48e80c0029` |
+| `name_without_null` | The UUID string without the `\0` null terminator |
+
+After computing the MD5 hash of the combined bytes, the resulting 16-byte digest is modified to comply with RFC 4122:
+
+```sh
+byte[6] = (byte[6] & 0x0F) | 0x30  # set version to 3
+byte[8] = (byte[8] & 0x3F) | 0x80  # set variant to RFC 4122
+```
+
+The final 16-byte value is the UUIDv3.
+
+:::info
+Example: `character@netobj.ddnet.tw` produces the UUID `76ce455b-f9eb-3a48-add7-e04b941d045c`.
+:::
+
+### UUID Registration
+
+Both client and server register all known UUID strings at startup, building a shared mapping between UUIDs and numeric IDs. The numeric IDs start at `OFFSET_UUID` which is `0x10000` (65536) and increment by one for each registered UUID in the order they are defined.
+
+When a peer encounters an unknown UUID on the wire, it can query the other peer using the `NETMSG_WHATIS` / `NETMSG_ITIS` / `NETMSG_IDONTKNOW` system message exchange.
+
+### Message ID on the Wire
+
+For extended messages (both system and game), the message type byte is `0` (respectively `NETMSG_EX` or `NETMSGTYPE_EX`), followed by the 16-byte UUID packed as raw binary. The receiver unpacks the UUID, looks it up in its UUID manager, and uses the resulting numeric ID to identify the message type.
+
+For extended snap items, the same UUID resolution mechanism applies, using `NETOBJTYPE_EX` as the type byte and the 16-byte UUID in place of the numeric type ID.-->

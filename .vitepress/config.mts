@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Protocool Docs - TeeFrame",
+  title: "Protocol Docs - TeeFrame",
   description: "A VitePress Site",
 
   srcDir: 'src',

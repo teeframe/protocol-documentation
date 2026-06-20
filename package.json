@@ -7,6 +7,6 @@
     "docs:preview": "vitepress preview"
   },
   "dependencies": {
-    "vitepress": "^1.0.0-rc.42"
+    "vitepress": "^2.0.0-alpha.17"
   }
 }
