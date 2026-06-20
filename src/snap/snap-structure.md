@@ -56,12 +56,12 @@ Snap Slice has a particular way to send the Snap Items. Check the [Snap Slice](.
 
 ## Snap Item Structure
 
-Snap Item have the following bytes structure:
+Each snap item uses variable-length integer packing for all fields:
 
 ```sh
-itemByte[0]     // item id
-itemByte[1]     // id
-itemByte[2-...] // payload (only integers)
+itemByte[*-...]  // item type - packed integer
+itemByte[*-...]  // item id   - packed integer
+itemByte[*-...]  // item-specific payload - packed integers
 ```
 
 <!--## Snap Item Structure (DDNet Specific)
