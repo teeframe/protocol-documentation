@@ -18,15 +18,39 @@ Snap Single chunk have the following bytes structure:
 
 ```sh
 // chunk header...
-chunkByte[3-*]   // current tick        - integer
-chunkByte[*]     // delta tick          - integer
-chunkByte[*]     // crc                 - integer
-chunkByte[*]     // size                - integer
-chunkByte[*]     // removed items count - integer
-chunkByte[*]     // updated items count - integer
-chunkByte[*]     // unused              - integer (0)  
-chunkByte[*-...] // snap payload
+chunkByte[3-*]   // current tick - integer
+chunkByte[*]     // delta tick   - integer
+chunkByte[*]     // crc          - integer
+chunkByte[*]     // payload size - integer
+chunkByte[*-...] // snap payload (variable-int compressed)
 ```
+
+The snap payload, after variable-int decompression, contains:
+
+```sh
+int[0]           // removed items count - integer
+int[1]           // updated items count - integer
+int[2]           // unused              - integer (always 0)
+int[3-*]         // removed item keys   - integers (one per removed item)
+int[*-...]       // item deltas
+```
+
+### Removed Items
+
+Each removed item is identified by its **item key** — a single packed integer computed as `(type_id << 16) | id`.
+
+### Item Deltas
+
+Each item delta (new or updated) has the following structure:
+
+```sh
+int[0]           // type_id - packed integer
+int[1]           // id      - packed integer
+int[2]           // _size   - packed integer (only present if type has no pre-agreed size)
+int[3-*]         // data    - packed integers (item-specific fields)
+```
+
+For updated items, the data contains the **difference** (delta) between the new and old item values, computed element-wise using wrapping 32-bit integer subtraction. For new items, the data contains the full item values.
 
 :::info
 It is recommended to check the [Snap Types](./../packets/snaps-concept.md#snap-types) section for more information about these values.
