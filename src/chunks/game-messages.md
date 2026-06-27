@@ -335,8 +335,7 @@ Structure:
 
 | Field         | Type   | Description |
 | ------------- | ------ | ----------- |
-| Spectator Mode | **Integer** | Spectator mode: `0` = free view, `1` = player, `2` = red flag, `3` = blue flag. |
-| Spectator ID  | **Integer** | Player ID followed by the selected spectator mode, or `-1` when no player is selected. |
+| Spectator ID  | **Integer** | Client ID being spectated, or `-1` (`SPEC_FREEVIEW`) for free view mode. |
 
 ## 20 - NETMSGTYPE_CL_STARTINFO
 
