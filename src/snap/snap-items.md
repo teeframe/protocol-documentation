@@ -166,13 +166,13 @@ Check the [String Packing To Snap Items](./../packets/default-packets.md#string-
 
 ## 12 - NETOBJTYPE_SPECTATORINFO
 
-This item contains the spectator state of a player.
+This item contains the spectator state of a player. It is only sent to the local spectator (the snapping client itself) when their team is `TEAM_SPECTATORS`.
+
 Structure:
 
 | Field         | Type   | Description |
 | ------------- | ------ | ----------- |
-| SpecMode | **Integer** | Spectator mode: `0` = free view, `1` = follow player, `2` = watch red flag, `3` = watch blue flag. |
-| SpectatorID | **Integer** | Client ID being spectated, or `-1` when not following a player. |
+| SpectatorID | **Integer** | Client ID being spectated, or `-1` (`SPEC_FREEVIEW`) when in free view mode. |
 | X | **Integer** | Spectator camera X position in the world. |
 | Y | **Integer** | Spectator camera Y position in the world. |
 
